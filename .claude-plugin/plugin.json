@@ -1,0 +1,9 @@
+{
+  "name": "beads-ralph-init",
+  "version": "1.0.0",
+  "description": "Initialize beads-ralph integration in any project for persistent task tracking with automatic context recovery",
+  "author": {
+    "name": "Claude Code User"
+  },
+  "keywords": ["beads", "ralph-loop", "task-tracking", "context-recovery", "hooks"]
+}
