@@ -6,6 +6,7 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
 
 # Editor directories and files
 .idea/
@@ -13,10 +14,66 @@ Thumbs.db
 *.swp
 *.swo
 *~
+*.bak
 
 # Logs
 *.log
+npm-debug.log*
 
-# Local development
+# Local Claude Code files (session-specific)
+.claude/*.local.md
+.claude/*.local.json
+.claude/settings.local.json
+.claude/conversations/
+.claude/history/
+
+# Secrets and credentials - NEVER commit these
 .env
+.env.*
+*.env
 .env.local
+.env.development
+.env.production
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*.secret
+secrets/
+credentials/
+config.local.*
+
+# API keys and tokens
+**/api_key*
+**/apikey*
+**/api-key*
+**/*_token*
+**/*_secret*
+.npmrc
+.yarnrc
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache and temp files
+*.cache
+.cache/
+tmp/
+temp/
+*.tmp
+
+# Node modules (if any scripts added later)
+node_modules/
+
+# Python (if any scripts added later)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Beads database (users create their own)
+.beads/
