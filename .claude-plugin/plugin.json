@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Initialize beads-ralph integration in any project for persistent task tracking with automatic context recovery",
   "author": {
-    "name": "Claude Code User"
+    "name": "cmb1705",
+    "url": "https://github.com/cmb1705"
   },
-  "keywords": ["beads", "ralph-loop", "task-tracking", "context-recovery", "hooks"]
+  "repository": "https://github.com/cmb1705/beads-ralph-init",
+  "homepage": "https://github.com/cmb1705/beads-ralph-init#readme",
+  "license": "MIT",
+  "keywords": ["beads", "ralph-loop", "task-tracking", "context-recovery", "hooks", "claude-code"]
 }

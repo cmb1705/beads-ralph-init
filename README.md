@@ -1,5 +1,8 @@
 # beads-ralph-init
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/cmb1705/beads-ralph-init/releases)
+
 A Claude Code plugin to initialize beads-ralph integration in any project for persistent task tracking with automatic context recovery.
 
 ## What It Does
@@ -12,19 +15,29 @@ This plugin sets up the complete beads-ralph integration stack:
 - **CLAUDE.md** - Project-level configuration and workflow guidance
 - **AGENTS.md** - Agent instructions for beads integration
 
+## Prerequisites
+
+- [Claude Code](https://claude.ai/code) installed
+- [beads (bd)](https://github.com/steveyegge/beads) CLI installed and available in PATH
+
 ## Installation
 
-### From Local Directory
+### Option 1: Clone and Use Directly
 
 ```bash
-# Add to your Claude Code settings
-claude /plugins add --path "C:\Users\cmb17\.claude\plugins\local\beads-ralph-init"
+git clone https://github.com/cmb1705/beads-ralph-init.git
+claude --plugin-dir ./beads-ralph-init
 ```
 
-### From Plugin Directory Flag
+### Option 2: Add to Your Plugins Directory
 
 ```bash
-claude --plugin-dir "C:\Users\cmb17\.claude\plugins\local\beads-ralph-init"
+git clone https://github.com/cmb1705/beads-ralph-init.git ~/.claude/plugins/beads-ralph-init
+```
+
+Then add to your Claude Code settings or use:
+```bash
+claude --plugin-dir ~/.claude/plugins/beads-ralph-init
 ```
 
 ## Usage
@@ -110,15 +123,21 @@ Session Stop → Hook Reminder → Sync Before Exit
 }
 ```
 
-## Requirements
+## Contributing
 
-- Claude Code
-- beads (bd) CLI installed and available in PATH
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Version
-
-1.0.0
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Related Projects
+
+- [beads](https://github.com/steveyegge/beads) - Git-based issue tracking with dependency support
+- [Claude Code](https://claude.ai/code) - AI-powered coding assistant
