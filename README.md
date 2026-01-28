@@ -12,8 +12,10 @@ This plugin sets up the complete beads-ralph integration stack:
 - **SessionStart hook** - Runs `bd prime` to inject beads context on session start and after compaction
 - **PreCompact hook** - Runs `bd sync --flush-only` to preserve state before context compaction
 - **Stop hook** - Reminds to sync beads before ending session
-- **CLAUDE.md** - Project-level configuration and workflow guidance
-- **AGENTS.md** - Agent instructions for beads integration
+- **CLAUDE.md** - Project-level configuration and workflow guidance (appends to existing)
+- **AGENTS.md** - Agent instructions for beads integration (appends to existing)
+
+**Non-destructive installation**: Existing hooks, CLAUDE.md, and AGENTS.md content are preserved. The plugin merges hooks and appends documentation sections with identifiable markers.
 
 ## Prerequisites
 
@@ -50,10 +52,13 @@ cd /path/to/your/project
 ```
 
 This will:
-1. Initialize beads database (`bd init`)
-2. Create `.claude/settings.local.json` with hooks
+
+1. Initialize beads database (`bd init`) if not present
+2. Create or **merge** hooks into `.claude/settings.local.json` (preserves existing hooks)
 3. Create `.claude/hookify.beads-reminder.local.md`
-4. Create `CLAUDE.md` and `AGENTS.md`
+4. Create or **append** to `CLAUDE.md` and `AGENTS.md` (preserves existing content)
+
+Use `--force` to overwrite existing beads sections instead of skipping them.
 
 ### After Initialization
 
@@ -75,15 +80,17 @@ Auto-activating skill that provides guidance when you mention:
 - "session persistence"
 - "TodoWrite vs beads"
 
-## Files Created
+## Files Created/Modified
 
-| File | Purpose |
-|------|---------|
-| `.beads/*` | Beads database |
-| `.claude/settings.local.json` | SessionStart + PreCompact hooks |
-| `.claude/hookify.beads-reminder.local.md` | Stop hook reminder |
-| `CLAUDE.md` | Project configuration |
-| `AGENTS.md` | Agent instructions |
+| File | Action | Purpose |
+| ---- | ------ | ------- |
+| `.beads/*` | Created | Beads database |
+| `.claude/settings.local.json` | Merged | SessionStart + PreCompact hooks |
+| `.claude/hookify.beads-reminder.local.md` | Created | Stop hook reminder |
+| `CLAUDE.md` | Appended | Project configuration (with markers) |
+| `AGENTS.md` | Appended | Agent instructions (with markers) |
+
+**Markers**: Beads sections in CLAUDE.md and AGENTS.md are wrapped in HTML comment markers (`<!-- BEADS-RALPH-INTEGRATION-START -->` and `<!-- BEADS-AGENT-INSTRUCTIONS-START -->`) for easy identification and removal.
 
 ## How It Works
 
